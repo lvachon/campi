@@ -46,6 +46,7 @@ while(1):
 			if(pairParts[0]=='awbblue'):
 				camera.awb_gains = (pairParts[1]*1.0, g[1])
 	f.close()
-	camera.capture('./ramdisk/frame.jpg')
+	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
+	camera.capture('./ramdisk/buffer.jpg')
 	time.sleep(1)
 
