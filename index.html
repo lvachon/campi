@@ -3,7 +3,7 @@
 		<title>Campi</title>
 		<script>
 				function sendSettings(){
-					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred.value}&awbblue=${awbblue.value}&exposure=${exposure.value}`);
+					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred.value}&awbblue=${awbblue.value}&exposure=${exposure.value}&brightness=${brightness.value}&contrast=${contrast.value}`);
 				}
 				function sendCommand(){
                         fetch(`exec.php?pan=${pan.value}&tilt=${tilt.value}`)
