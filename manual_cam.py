@@ -32,6 +32,7 @@ while(1):
 		pairs = f.read().split(";")
 		for pair in pairs:
 			pairParts = pair.split(":")
+			echo(pairParts)
 			#if(pairParts[0]=='again'):
 			#	camera.analog_gain = pairParts[1]*1.0
 			#if(pairParts[0]=='dgain'):
