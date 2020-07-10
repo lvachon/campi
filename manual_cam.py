@@ -6,8 +6,8 @@ from fractions import Fraction
 import os
 import time
 
-width=1920
-height=1080
+width=1024
+height=768
 
 print("Getting camera")
 camera = PiCamera()
@@ -52,6 +52,14 @@ try:
 						iso = int(pairParts[1])
 						if(iso>-1 and iso<801):
 							camera.iso = int(pairParts[1])
+					if(pairParts[0]=='bright'):
+						bright = int(pairParts[1])
+						if(bright>-1 and bright<101):
+							camera.brightness = int(pairParts[1])
+					if(pairParts[0]=='contrast'):
+						contrast = int(pairParts[1])
+						if(contrast>-101 and contrast<101):
+							camera.contrast = int(pairParts[1])
 					if(pairParts[0]=='awbred'):
 						g = (float(pairParts[1]),g[1])
 					if(pairParts[0]=='awbblue'):

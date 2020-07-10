@@ -1,5 +1,5 @@
 <?php 
-$vars = explode(",","shutter,iso,awbred,awbblue,exposure");
+$vars = explode(",","shutter,iso,awbred,awbblue,exposure,brightness,contrast");
 $output = "";
 foreach($vars as $var){
 	if($var!="exposure"){
