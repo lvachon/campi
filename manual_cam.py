@@ -32,13 +32,14 @@ while(1):
 		pairs = f.read().split(";")
 		for pair in pairs:
 			pairParts = pair.split(":")
-			print(pairParts)
 			#if(pairParts[0]=='again'):
 			#	camera.analog_gain = pairParts[1]*1.0
 			#if(pairParts[0]=='dgain'):
 			#	camera.digital_gain = pairParts[1]*1.0
 			if(pairParts[0]=='shutter'):
+				camera.framerate = 1000000/int(pairParts[1])
 				camera.shutter_speed = int(pairParts[1])
+
 			if(pairParts[0]=='iso'):
 				camera.iso = int(pairParts[1])
 			if(pairParts[0]=='awbred'):
