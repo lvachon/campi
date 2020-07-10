@@ -21,7 +21,7 @@ camera.shutter_speed = 10000
 camera.iso = 400
 camera.exposure_mode = 'off'
 camera.awb_mode = 'off'
-camera.awb_gains = (1,1)
+#camera.awb_gains = (1,1)
 camera.framerate = 1
 camera.rotation = 180
 print("Starting loop")
