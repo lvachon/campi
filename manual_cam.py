@@ -9,6 +9,9 @@ height=768
 
 print("Getting camera")
 camera = PiCamera()
+camera.start_preview();
+time.sleep(2000);
+camera.stop_preview();
 camera.resolution = (width, height)
 camera.framerate = 1
 rawCapture = PiRGBArray(camera, size=(width, height))
