@@ -24,35 +24,39 @@ camera.awb_mode = 'off'
 camera.framerate = 1
 camera.rotation = 180
 print("Starting loop")
-while(1):
-	f = open("./ramdisk/settings","r")
-	if(f.mode=='r'):
-		g = camera.awb_gains
-		pairs = f.read().split(";")
-		for pair in pairs:
-			pairParts = pair.split(":")
-			#if(pairParts[0]=='again'):
-			#	camera.analog_gain = pairParts[1]*1.0
-			#if(pairParts[0]=='dgain'):
-			#	camera.digital_gain = pairParts[1]*1.0
-			if(pairParts[0]=='shutter'):
-				#camera.framerate = 1000000/int(pairParts[1])
-				camera.shutter_speed = int(pairParts[1])
+try:
+	while(1):
+		f = open("./ramdisk/settings","r")
+		if(f.mode=='r'):
+			g = camera.awb_gains
+			pairs = f.read().split(";")
+			for pair in pairs:
+				pairParts = pair.split(":")
+				#if(pairParts[0]=='again'):
+				#	camera.analog_gain = pairParts[1]*1.0
+				#if(pairParts[0]=='dgain'):
+				#	camera.digital_gain = pairParts[1]*1.0
+				if(pairParts[0]=='shutter'):
+					#camera.framerate = 1000000/int(pairParts[1])
+					camera.shutter_speed = int(pairParts[1])
 
-			if(pairParts[0]=='iso'):
-				iso = int(pairParts[1])
-				if(iso>-1 and iso<801):
-					camera.iso = int(pairParts[1])
-			if(pairParts[0]=='awbred'):
-				g = (float(pairParts[1]),g[1])
-			if(pairParts[0]=='awbblue'):
-				g = (g[0],float(pairParts[1]))
-			if(pairParts[0]=='exposure'):
-				camera.exposure_mode = pairParts[1]
-		camera.awb_gains = g
-	f.close()
-	camera.capture('./ramdisk/buffer.jpg')
-	time.sleep(1)
-	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
-	print("frame")
-camera.close();
+				if(pairParts[0]=='iso'):
+					iso = int(pairParts[1])
+					if(iso>-1 and iso<801):
+						camera.iso = int(pairParts[1])
+				if(pairParts[0]=='awbred'):
+					g = (float(pairParts[1]),g[1])
+				if(pairParts[0]=='awbblue'):
+					g = (g[0],float(pairParts[1]))
+				if(pairParts[0]=='exposure'):
+					camera.exposure_mode = pairParts[1]
+			camera.awb_gains = g
+		f.close()
+		camera.capture('./ramdisk/buffer.jpg')
+		time.sleep(1)
+		os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
+		print("frame")
+except (e):
+	print(e)
+finally:
+	camera.close();
