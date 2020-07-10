@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Campi</title>
+		<script>
+				function sendSettings(){
+					fetch(`settings.php?again=${again.value}&dgain=${dgain.value}&shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred}&awblue=${awblue}`);
+				}
+				let to = 0;
+				function refreshImage(){
+					clearTimeout(to);
+					frame.src=`ramdisk/frame.jpg?rnd=${Math.random()}`;
+					setTimeout('refreshImage()',2000);
+				}
+		</script>
+	</head>
+	<body>
+		<img id='frame' src='ramdisk/frame.jpg'/>
+		<div id='settings'>
+			<div id='setting'>
+				<label>Analog Gain</label>
+				<input value='1.0' id='again'/>
+			</div>
+			<div id='setting'>
+				<label>Digital Gain</label>
+				<input value='1.0' id='dgain'/>
+			</div>
+			<div id='setting'>
+				<label>Shutter Speed</label>
+				<input value='1000' id='shutter'/>
+			</div>
+			<div id='setting'>
+				<label>ISO</label>
+				<input value='200' id='iso'/>
+			</div>
+			<div id='setting'>
+				<label>AWB-Red</label>
+				<input value='1.0' id='awbred'/>
+			</div>
+			<div id='setting'>
+				<label>AWB-Blue</label>
+				<input value='1.0' id='awbblue'/>
+			</div>
+			<div id='setting'>
+				<button onClick='sendSettings()'>Save Settings</button>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
