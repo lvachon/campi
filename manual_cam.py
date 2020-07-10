@@ -52,6 +52,7 @@ while(1):
 		camera.awb_gains = g
 	f.close()
 	camera.capture('./ramdisk/buffer.jpg')
-	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	time.sleep(1)
+	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
+	print("frame")
 camera.close();
