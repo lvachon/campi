@@ -35,6 +35,7 @@ try:
 			g = camera.awb_gains
 			line = f.read()
 			if(line!=oline):
+				oline=line
 				print("new settings")
 				pairs = line.split(";")
 				for pair in pairs:
