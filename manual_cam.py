@@ -14,7 +14,6 @@ time.sleep(2);
 camera.stop_preview();
 camera.resolution = (width, height)
 camera.framerate = 1
-rawCapture = PiRGBArray(camera, size=(width, height))
 #camera.analog_gain = 1
 #camera.digital_gain = 1
 camera.shutter_speed = 10000
@@ -55,4 +54,4 @@ while(1):
 	camera.capture('./ramdisk/buffer.jpg')
 	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	time.sleep(1)
-
+camera.close();
