@@ -42,9 +42,9 @@ while(1):
 			if(pairParts[0]=='iso'):
 				camera.iso = int(pairParts[1])
 			if(pairParts[0]=='awbred'):
-				g = (float(pairParts[1],g[1])
+				g = (float(pairParts[1]),g[1])
 			if(pairParts[0]=='awbblue'):
-				g = (g[0],float(pairParts[1])
+				g = (g[0],float(pairParts[1]))
 			if(pairParts[0]=='exposure'):
 				camera.exposure_mode = pairParts[1]
 		camera.awg_gains = g
