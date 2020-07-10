@@ -6,8 +6,8 @@ from fractions import Fraction
 import os
 import time
 
-width=1024
-height=768
+width=1920
+height=1080
 
 print("Getting camera")
 camera = PiCamera()
