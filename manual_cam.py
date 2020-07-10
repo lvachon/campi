@@ -23,7 +23,7 @@ camera.iso = 400
 camera.exposure_mode = 'off'
 camera.awb_mode = 'off'
 #camera.awb_gains = (1,1)
-camera.framerate = 0.5
+camera.framerate = 1
 camera.rotation = 180
 print("Starting loop")
 oline=""
@@ -45,7 +45,7 @@ try:
 					#	camera.digital_gain = pairParts[1]*1.0
 					print(pairParts)
 					if(pairParts[0]=='shutter'):
-						if(int(pairParts[1])>1000000):
+						if(int(pairParts[1])>100000):
 							camera.framerate = Fraction(1000000,int(pairParts[1]))
 						camera.shutter_speed = int(pairParts[1])
 
