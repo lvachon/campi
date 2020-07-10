@@ -38,13 +38,13 @@ while(1):
 			#if(pairParts[0]=='dgain'):
 			#	camera.digital_gain = pairParts[1]*1.0
 			if(pairParts[0]=='shutter'):
-				camera.shutter_speed = pairParts[1]*1.0
+				camera.shutter_speed = float(pairParts[1])
 			if(pairParts[0]=='iso'):
-				camera.iso = pairParts[1]*1.0
+				camera.iso = float(pairParts[1])
 			if(pairParts[0]=='awbred'):
-				camera.awb_gains = (g[0],pairParts[1]*1.0)
+				camera.awb_gains = (g[0],float(pairParts[1]))
 			if(pairParts[0]=='awbblue'):
-				camera.awb_gains = (pairParts[1]*1.0, g[1])
+				camera.awb_gains = (float(pairParts[1]), g[1])
 	f.close()
 	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	camera.capture('./ramdisk/buffer.jpg')
