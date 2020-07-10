@@ -5,6 +5,9 @@
 				function sendSettings(){
 					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred.value}&awbblue=${awbblue.value}&exposure=${exposure.value}`);
 				}
+				function sendCommand(){
+                        fetch(`exec.php?pan=${pan.value}&tilt=${tilt.value}`)
+                }
 				let to = 0;
 				function refreshImage(){
 					clearTimeout(to);
@@ -25,6 +28,19 @@
 				<input value='1.0' id='dgain'/>
 			</div>-->
 			<div id='setting'>
+				<label>Pan</label>
+                <button onclick='pan.value=pan.value<100?1.0*pan.value+5.0:100.0;sendCommand();'>&lt;--</button>
+                <input type='text' id='pan' value='50' size='3'/>%
+                <button onclick='pan.value=pan.value>0.0?1.0*pan.value-5.0:0.0;sendCommand();'>--&gt;</button>
+            </div>
+   			<div id='setting'>
+       			<label>Tilt</label>
+                <button onclick='tilt.value=tilt.value<100?1.0*tilt.value+5.0:100.0;sendCommand();'>\/</button>
+                <input type='text' id='tilt' value='50' width='3'/>%
+                <button onclick='tilt.value=tilt.value>0.0?1.0*tilt.value-5.0:0.0;sendCommand();'>/\</button>
+            </div>
+			<div id='setting'>
+
 				<label>Exposure Mode</label>
 				<select id='exposure'>
 					<option value='off'>Off</option>
