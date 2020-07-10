@@ -42,11 +42,12 @@ while(1):
 			if(pairParts[0]=='iso'):
 				camera.iso = int(pairParts[1])
 			if(pairParts[0]=='awbred'):
-				camera.awb_gains[0] = float(pairParts[1])
+				g = (float(pairParts[1],g[1])
 			if(pairParts[0]=='awbblue'):
-				camera.awb_gains[1] = float(pairParts[1])
+				g = (g[0],float(pairParts[1])
 			if(pairParts[0]=='exposure'):
 				camera.exposure_mode = pairParts[1]
+		camera.awg_gains = g
 	f.close()
 	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	camera.capture('./ramdisk/buffer.jpg')
