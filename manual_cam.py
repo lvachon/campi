@@ -28,7 +28,7 @@ camera.rotation = 180
 print("Starting loop")
 oline=""
 try:
-	while(i,filename = enumerate(camera.capture_continuous('/home/pi/campi/ramdisk/buffer.jpg'))):
+	while(i,filename  = camera.capture_continuous('/home/pi/campi/ramdisk/buffer.jpg')):
 
 		f = open("/home/pi/campi/ramdisk/settings","r")
 		if(f.mode=='r'):
