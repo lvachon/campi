@@ -73,7 +73,7 @@ try:
 		time.sleep(camera.exposure_speed/1000000+1)
 		os.system('cp /home/pi/campi/ramdisk/buffer.jpg /home/pi/campi/ramdisk/frame.jpg')
 		
-except:
-	print("ERR")
+except Exception as err:
+	print(err)
 finally:
 	camera.close();
