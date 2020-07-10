@@ -28,7 +28,7 @@ camera.rotation = 180
 print("Starting loop")
 oline=""
 try:
-	while(1):
+	while(camera.capture_continuous('/home/pi/campi/ramdisk/buffer.jpg')):
 
 		f = open("/home/pi/campi/ramdisk/settings","r")
 		if(f.mode=='r'):
@@ -68,11 +68,11 @@ try:
 						camera.exposure_mode = pairParts[1]
 				camera.awb_gains = g
 		f.close()
-		print("capturing")
-		camera.capture('/home/pi/campi/ramdisk/buffer.jpg')
-		time.sleep(0.1)
+		print("frame")
+		if(camera.framerate>1):
+			time.sleep(1)
 		os.system('cp /home/pi/campi/ramdisk/buffer.jpg /home/pi/campi/ramdisk/frame.jpg')
-		print("saved")
+		
 except:
 	print("ERR")
 finally:
