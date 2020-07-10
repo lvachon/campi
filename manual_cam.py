@@ -47,7 +47,7 @@ while(1):
 				g = (g[0],float(pairParts[1]))
 			if(pairParts[0]=='exposure'):
 				camera.exposure_mode = pairParts[1]
-		camera.awg_gains = g
+		camera.awb_gains = g
 	f.close()
 	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	camera.capture('./ramdisk/buffer.jpg')
