@@ -3,7 +3,7 @@
 		<title>Campi</title>
 		<script>
 				function sendSettings(){
-					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred}&awbblue=${awbblue}&exposure=${exposure.value}`);
+					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred.value}&awbblue=${awbblue.value}&exposure=${exposure.value}`);
 				}
 				let to = 0;
 				function refreshImage(){
