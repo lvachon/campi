@@ -70,6 +70,7 @@ try:
 				camera.awb_gains = g
 		f.close()
 		time.sleep(1)
+		print("frame")
 		os.system('cp /home/pi/campi/ramdisk/buffer.jpg /home/pi/campi/ramdisk/frame.jpg')
 except Exception as err:
 	print(err)
