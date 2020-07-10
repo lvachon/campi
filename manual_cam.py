@@ -37,7 +37,7 @@ try:
 				#if(pairParts[0]=='dgain'):
 				#	camera.digital_gain = pairParts[1]*1.0
 				if(pairParts[0]=='shutter'):
-					#camera.framerate = 1000000/int(pairParts[1])
+					camera.framerate = 1000000/int(pairParts[1])
 					camera.shutter_speed = int(pairParts[1])
 
 				if(pairParts[0]=='iso'):
