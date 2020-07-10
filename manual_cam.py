@@ -41,7 +41,9 @@ while(1):
 				camera.shutter_speed = int(pairParts[1])
 
 			if(pairParts[0]=='iso'):
-				camera.iso = int(pairParts[1])
+				iso = int(pairParts[1])
+				if(iso>-1 and iso<801):
+					camera.iso = int(pairParts[1])
 			if(pairParts[0]=='awbred'):
 				g = (float(pairParts[1]),g[1])
 			if(pairParts[0]=='awbblue'):
