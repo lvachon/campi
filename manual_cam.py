@@ -38,9 +38,9 @@ while(1):
 			#if(pairParts[0]=='dgain'):
 			#	camera.digital_gain = pairParts[1]*1.0
 			if(pairParts[0]=='shutter'):
-				camera.shutter_speed = float(pairParts[1])
+				camera.shutter_speed = int(pairParts[1])
 			if(pairParts[0]=='iso'):
-				camera.iso = float(pairParts[1])
+				camera.iso = int(pairParts[1])
 			if(pairParts[0]=='awbred'):
 				camera.awb_gains = (g[0],float(pairParts[1]))
 			if(pairParts[0]=='awbblue'):
