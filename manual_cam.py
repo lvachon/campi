@@ -50,7 +50,7 @@ while(1):
 				camera.exposure_mode = pairParts[1]
 		camera.awb_gains = g
 	f.close()
-	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	camera.capture('./ramdisk/buffer.jpg')
+	os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 	time.sleep(1)
 
