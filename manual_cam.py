@@ -69,8 +69,7 @@ try:
 				camera.awb_gains = g
 		f.close()
 		print("frame")
-		if(camera.framerate>1):
-			time.sleep(1)
+		time.sleep(camera.exposure_speed/1000000)
 		os.system('cp /home/pi/campi/ramdisk/buffer.jpg /home/pi/campi/ramdisk/frame.jpg')
 		
 except:
