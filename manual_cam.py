@@ -12,14 +12,15 @@ camera = PiCamera()
 camera.resolution = (width, height)
 camera.framerate = 1
 rawCapture = PiRGBArray(camera, size=(width, height))
-camera.analog_gain = 1
-camera.digital_gain = 1
+#camera.analog_gain = 1
+#camera.digital_gain = 1
 camera.shutter_speed = 10000
 camera.iso = 400
 camera.exposure_mode = 'off'
 camera.awb_mode = 'off'
 camera.awb_gains = (1,1)
 camera.framerate = 1
+camera.rotation = 180
 print("Starting loop")
 while(1):
 	f = open("./ramdisk/settings","r")
@@ -28,10 +29,10 @@ while(1):
 		pairs = f.read().split(";")
 		for pair in pairs:
 			pairParts = pair.split(":")
-			if(pairParts[0]=='again'):
-				camera.analog_gain = pairParts[1]*1.0
-			if(pairParts[0]=='dgain'):
-				camera.digital_gain = pairParts[1]*1.0
+			#if(pairParts[0]=='again'):
+			#	camera.analog_gain = pairParts[1]*1.0
+			#if(pairParts[0]=='dgain'):
+			#	camera.digital_gain = pairParts[1]*1.0
 			if(pairParts[0]=='shutter'):
 				camera.shutter_speed = pairParts[1]*1.0
 			if(pairParts[0]=='iso'):

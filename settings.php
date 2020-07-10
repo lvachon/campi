@@ -1,5 +1,5 @@
 <?php 
-$vars = explode(",","again,dgain,shutter,iso,awbred,awbblue");
+$vars = explode(",","shutter,iso,awbred,awbblue");
 $output = "";
 foreach($vars as $var){
 	$output.="{$var}=".strval(floatval($_GET[$var])).";";
