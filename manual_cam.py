@@ -30,7 +30,7 @@ oline=""
 try:
 	while(1):
 
-		f = open("./ramdisk/settings","r")
+		f = open("/home/campi/campi/ramdisk/settings","r")
 		if(f.mode=='r'):
 			g = camera.awb_gains
 			line = f.read()
@@ -69,9 +69,9 @@ try:
 				camera.awb_gains = g
 		f.close()
 		print("capturing")
-		camera.capture('./ramdisk/buffer.jpg')
+		camera.capture('/home/campi/campi/ramdisk/buffer.jpg')
 		time.sleep(0.1)
-		os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
+		os.system('cp /home/campi/campi/ramdisk/buffer.jpg /home/campi/campi/ramdisk/frame.jpg')
 		print("saved")
 except:
 	print("ERR")
