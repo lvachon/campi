@@ -3,7 +3,7 @@
 		<title>Campi</title>
 		<script>
 				function sendSettings(){
-					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred}&awbblue=${awbblue}`);
+					fetch(`settings.php?shutter=${shutter.value}&iso=${iso.value}&awbred=${awbred}&awbblue=${awbblue}&exposure=${exposure.value}`);
 				}
 				let to = 0;
 				function refreshImage(){
@@ -24,6 +24,24 @@
 				<label>Digital Gain</label>
 				<input value='1.0' id='dgain'/>
 			</div>-->
+			<div id='setting'>
+				<label>Exposure Mode</label>
+				<select id='exposure'>
+					<option value='off'>Off</option>
+					<option value='auto'>Auto</option>
+					<option value='night'>Night</option>
+					<option value='nightpreview'>NightPreview</option>
+					<option value='backlight'>Backlight</option>
+					<option value='spotlight'>Spotlight</option>
+					<option value='sports'>Sports</option>
+					<option value='snow'>Snow</option>
+					<option value='beach'>Beach</option>
+					<option value='verylong'>Verylong</option>
+					<option value='fixedfps'>FixedFPS</option>
+					<option value='antishake'>AntiShake</option>
+					<option value='fireworks'>Fireworks</option>
+				</select>
+			</div>
 			<div id='setting'>
 				<label>Shutter Speed</label>
 				<input value='1000' id='shutter'/>
