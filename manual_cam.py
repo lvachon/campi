@@ -56,7 +56,7 @@ try:
 		time.sleep(1)
 		os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 		print("frame")
-except (e):
-	print(e)
+except:
+	print("ERR")
 finally:
 	camera.close();
