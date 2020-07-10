@@ -10,7 +10,7 @@ height=768
 print("Getting camera")
 camera = PiCamera()
 camera.start_preview();
-time.sleep(2000);
+time.sleep(2);
 camera.stop_preview();
 camera.resolution = (width, height)
 camera.framerate = 1
@@ -47,5 +47,5 @@ while(1):
 				camera.awb_gains = (pairParts[1]*1.0, g[1])
 	f.close()
 	camera.capture('./ramdisk/frame.jpg')
-	time.sleep(1000)
+	time.sleep(1)
 
