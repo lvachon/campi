@@ -52,7 +52,7 @@ try:
 						iso = int(pairParts[1])
 						if(iso>-1 and iso<801):
 							camera.iso = int(pairParts[1])
-					if(pairParts[0]=='bright'):
+					if(pairParts[0]=='brightness'):
 						bright = int(pairParts[1])
 						if(bright>-1 and bright<101):
 							camera.brightness = int(pairParts[1])
