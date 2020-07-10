@@ -1,6 +1,8 @@
 #! /usr/bin/python
 from picamera.array import PiRGBArray
 from picamera import PiCamera
+from fractions import Fraction
+
 import os
 import time
 
@@ -37,7 +39,7 @@ try:
 				#if(pairParts[0]=='dgain'):
 				#	camera.digital_gain = pairParts[1]*1.0
 				if(pairParts[0]=='shutter'):
-					camera.framerate = 1000000/int(pairParts[1])
+					camera.framerate = Fraction(1000000,int(pairParts[1]))
 					camera.shutter_speed = int(pairParts[1])
 
 				if(pairParts[0]=='iso'):
@@ -52,8 +54,9 @@ try:
 					camera.exposure_mode = pairParts[1]
 			camera.awb_gains = g
 		f.close()
+		print("capturing")
 		camera.capture('./ramdisk/buffer.jpg')
-		time.sleep(1)
+		time.sleep(0.1)
 		os.system('cp ./ramdisk/buffer.jpg ./ramdisk/frame.jpg')
 		print("frame")
 except:
